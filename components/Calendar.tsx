@@ -71,7 +71,7 @@ export function Calendar() {
       <motion.section
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        className="calendar-holes texture-paper relative overflow-hidden rounded-[2.5rem] border border-white/70 paper-surface p-4 shadow-paper sm:p-6 lg:p-8"
+        className="calendar-holes texture-paper relative overflow-hidden rounded-[2.5rem] border border-white/70 paper-surface p-4 shadow-paper sm:p-6 dark:border-white/10 lg:p-8"
       >
         <BindingStrip />
 
@@ -86,7 +86,7 @@ export function Calendar() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <div className="rounded-full border border-black/5 bg-white/75 px-4 py-2 text-sm text-muted shadow-sm dark:border-white/10 dark:bg-white/5">
+            <div className="rounded-full border border-black/5 bg-white/75 px-4 py-2 text-sm text-muted shadow-sm dark:border-white/15 dark:bg-slate-800/90 dark:text-slate-200">
               Accent <span className="font-semibold text-ink">{accentHex}</span>
             </div>
             <ThemeToggle
@@ -96,7 +96,7 @@ export function Calendar() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-[2rem] bg-[rgba(255,255,255,0.42)] shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] backdrop-blur dark:bg-white/[0.03]">
+        <div className="overflow-hidden rounded-[2rem] bg-[rgba(255,255,255,0.42)] shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] backdrop-blur dark:bg-slate-900/55 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
           <div className="grid gap-0 xl:grid-cols-[1.05fr_0.95fr]">
             <HeroImage
               currentMonth={currentMonth}
@@ -106,7 +106,7 @@ export function Calendar() {
             />
 
             <section className="flex flex-col gap-4 px-4 py-5 sm:px-5 sm:py-6">
-              <div className="grid gap-4 rounded-[1.75rem] bg-white/65 p-4 shadow-sm dark:bg-white/[0.03]">
+              <div className="grid gap-4 rounded-[1.75rem] bg-white/65 p-4 shadow-sm dark:bg-slate-900/80 dark:ring-1 dark:ring-white/10">
                 <MonthNavigator
                   currentMonth={currentMonth}
                   onNext={() => {
@@ -122,7 +122,7 @@ export function Calendar() {
                 <DateRangePicker label={formatSelectionLabel(range)} onClear={clearRange} />
               </div>
 
-              <div className="rounded-[1.75rem] bg-white/78 p-4 shadow-sm dark:bg-white/[0.04]">
+              <div className="rounded-[1.75rem] bg-white/78 p-4 shadow-sm dark:bg-slate-900/88 dark:ring-1 dark:ring-white/10">
                 <CalendarGrid
                   animationKey={format(currentMonth, "yyyy-MM")}
                   days={calendarDays}
@@ -137,7 +137,7 @@ export function Calendar() {
             </section>
           </div>
 
-          <div className="border-t border-black/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.8),rgba(255,255,255,0.55))] px-4 py-5 dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02))] sm:px-5 sm:py-6">
+          <div className="border-t border-black/5 bg-[linear-gradient(180deg,rgba(255,255,255,0.8),rgba(255,255,255,0.55))] px-4 py-5 dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(15,23,42,0.92),rgba(15,23,42,0.82))] sm:px-5 sm:py-6">
             <NotesPanel
               activeDate={activeDate}
               currentMonth={currentMonth}
@@ -152,3 +152,4 @@ export function Calendar() {
     </div>
   );
 }
+

@@ -48,8 +48,8 @@ export function CalendarDay({
       className={clsx(
         "group relative flex min-h-[72px] flex-col justify-between rounded-2xl border px-2.5 py-3 text-left transition sm:min-h-[78px] sm:px-3",
         isCurrentMonth
-          ? "border-black/5 bg-white text-ink dark:border-white/10 dark:bg-white/[0.05]"
-          : "border-transparent bg-stone-100/60 text-muted dark:bg-white/[0.02]",
+          ? "border-black/5 bg-white text-ink dark:border-white/10 dark:bg-slate-800/92"
+          : "border-transparent bg-stone-100/60 text-muted dark:bg-slate-900/55",
         isInRange && "bg-[rgba(var(--accent),0.12)]",
         (isRangeStart || isRangeEnd || isSelected) &&
           "border-transparent bg-[rgba(var(--accent),0.94)] text-white shadow-lg shadow-[rgba(var(--accent),0.25)]",
@@ -79,7 +79,7 @@ export function CalendarDay({
           <span
             className={clsx(
               "inline-flex w-fit rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em]",
-              isSelected ? "bg-white/15 text-white/90" : "bg-black/5 text-muted dark:bg-white/10"
+              isSelected ? "bg-white/15 text-white/90" : "bg-black/5 text-muted dark:bg-slate-700/80"
             )}
           >
             {holidayLabel}
@@ -92,3 +92,5 @@ export function CalendarDay({
     </motion.button>
   );
 }
+
+
