@@ -96,39 +96,6 @@ npm run build
 npm start
 ```
 
-## Deployment
-
-### Vercel
-
-1. Push the project to GitHub.
-2. Import it in Vercel.
-3. Keep the default Next.js settings.
-4. Deploy.
-
-### Netlify
-
-1. Push the project to GitHub.
-2. Import it in Netlify.
-3. Set the build command to `npm run build`.
-4. Use the Next.js runtime/plugin supported by Netlify.
-5. Deploy.
-
-## Submission Checklist
-
-The PDF asks for these handoff items:
-
-1. Source code repository
-   Add your public GitHub or GitLab link here after pushing the project.
-2. Video demonstration
-   Record a short walkthrough showing month navigation, range selection, notes, and responsive behavior.
-3. Live demo
-   Add a deployed Vercel or Netlify link if you publish one.
-
-Example placeholders:
-
-- Repository: `https://github.com/your-name/interactive-wall-calendar`
-- Video demo: `https://www.loom.com/share/your-demo-id`
-- Live demo: `https://interactive-wall-calendar.vercel.app`
 
 ## Architecture
 
@@ -142,8 +109,10 @@ Example placeholders:
 
 Add real screenshots after running locally:
 
-- `docs/desktop-calendar.png`
-- `docs/mobile-calendar.png`
+- <img width="724" height="913" alt="image" src="https://github.com/user-attachments/assets/adecfaa5-15c6-4090-8937-bef51c5fed8d" />
+
+- <img width="483" height="650" alt="image" src="https://github.com/user-attachments/assets/e1dab8d9-dc0a-456f-a0b4-e624797bfe62" />
+
 
 ## Notes
 
