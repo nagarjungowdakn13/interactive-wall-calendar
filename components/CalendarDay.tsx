@@ -35,6 +35,8 @@ export function CalendarDay({
   onFocus,
   onHover
 }: CalendarDayProps) {
+  const isHoliday = Boolean(holidayLabel);
+
   return (
     <motion.button
       layout
@@ -46,11 +48,11 @@ export function CalendarDay({
       onMouseEnter={onHover}
       onFocus={onFocus}
       className={clsx(
-        "group relative flex min-h-[72px] flex-col justify-between rounded-2xl border px-2.5 py-3 text-left transition sm:min-h-[78px] sm:px-3",
+        "group relative flex min-h-[78px] flex-col justify-between overflow-hidden rounded-2xl border px-2.5 py-3 text-left transition sm:min-h-[92px] sm:px-3",
         isCurrentMonth
           ? "border-black/5 bg-white text-ink dark:border-white/10 dark:bg-slate-800/92"
-          : "border-transparent bg-stone-100/60 text-muted dark:bg-slate-900/55",
-        isInRange && "bg-[rgba(var(--accent),0.12)]",
+          : "border-black/5 bg-stone-100/90 text-muted dark:border-white/8 dark:bg-slate-900/78 dark:text-slate-300",
+        isInRange && !isSelected && "bg-[rgba(var(--accent),0.14)] dark:bg-[rgba(var(--accent),0.2)]",
         (isRangeStart || isRangeEnd || isSelected) &&
           "border-transparent bg-[rgba(var(--accent),0.94)] text-white shadow-lg shadow-[rgba(var(--accent),0.25)]",
         isToday && !isSelected && "ring-2 ring-[rgba(var(--accent),0.45)]",
@@ -61,7 +63,9 @@ export function CalendarDay({
         <span
           className={clsx(
             "text-sm font-semibold sm:text-[15px]",
-            isWeekend && !isSelected && "text-[rgba(var(--accent),1)]"
+            !isSelected && isCurrentMonth && "text-ink dark:text-slate-50",
+            !isSelected && !isCurrentMonth && "text-muted dark:text-slate-300",
+            !isSelected && isWeekend && isCurrentMonth && "text-[rgba(var(--accent),1)]"
           )}
         >
           {format(date, "d")}
@@ -69,28 +73,39 @@ export function CalendarDay({
         {hasNote ? (
           <span
             aria-hidden="true"
-            className={clsx("mt-1 h-2.5 w-2.5 rounded-full", isSelected ? "bg-white" : "bg-[rgba(var(--accent),1)]")}
+            className={clsx(
+              "mt-1 h-2.5 w-2.5 shrink-0 rounded-full",
+              isSelected ? "bg-white" : "bg-[rgba(var(--accent),1)]"
+            )}
           />
         ) : null}
       </div>
 
-      <div className="space-y-1">
-        {holidayLabel ? (
+      <div className="mt-2 flex min-h-[28px] flex-col justify-end gap-1 sm:min-h-[34px]">
+        {isHoliday ? (
           <span
             className={clsx(
-              "inline-flex w-fit rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em]",
-              isSelected ? "bg-white/15 text-white/90" : "bg-black/5 text-muted dark:bg-slate-700/80"
+              "inline-flex max-w-full rounded-xl px-2 py-1 text-[9px] font-bold uppercase leading-[1.05rem] tracking-[0.16em]",
+              "whitespace-normal break-words",
+              isSelected
+                ? "bg-white/15 text-white/95"
+                : "bg-black/6 text-slate-600 dark:bg-slate-700/90 dark:text-slate-100"
             )}
           >
             {holidayLabel}
           </span>
         ) : null}
         {isToday ? (
-          <p className={clsx("text-[11px]", isSelected ? "text-white/80" : "text-muted")}>Today</p>
+          <p
+            className={clsx(
+              "text-[11px] leading-none",
+              isSelected ? "text-white/80" : "text-muted dark:text-slate-300"
+            )}
+          >
+            Today
+          </p>
         ) : null}
       </div>
     </motion.button>
   );
 }
-
-
