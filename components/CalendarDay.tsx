@@ -50,8 +50,8 @@ export function CalendarDay({
       className={clsx(
         "group relative flex min-h-[78px] flex-col justify-between overflow-hidden rounded-2xl border px-2.5 py-3 text-left transition sm:min-h-[92px] sm:px-3",
         isCurrentMonth
-          ? "border-black/5 bg-white text-ink dark:border-white/10 dark:bg-slate-800/92"
-          : "border-black/5 bg-stone-100/90 text-muted dark:border-white/8 dark:bg-slate-900/78 dark:text-slate-300",
+          ? "border-black/5 bg-white text-ink dark:border-slate-700 dark:bg-slate-100"
+          : "border-black/5 bg-stone-100/90 text-muted dark:border-slate-700 dark:bg-slate-200/85 dark:text-slate-500",
         isInRange && !isSelected && "bg-[rgba(var(--accent),0.14)] dark:bg-[rgba(var(--accent),0.2)]",
         (isRangeStart || isRangeEnd || isSelected) &&
           "border-transparent bg-[rgba(var(--accent),0.94)] text-white shadow-lg shadow-[rgba(var(--accent),0.25)]",
@@ -63,8 +63,8 @@ export function CalendarDay({
         <span
           className={clsx(
             "text-sm font-semibold sm:text-[15px]",
-            !isSelected && isCurrentMonth && "text-ink dark:text-slate-50",
-            !isSelected && !isCurrentMonth && "text-muted dark:text-slate-300",
+            !isSelected && isCurrentMonth && "text-ink dark:text-slate-900",
+            !isSelected && !isCurrentMonth && "text-muted dark:text-slate-500",
             !isSelected && isWeekend && isCurrentMonth && "text-[rgba(var(--accent),1)]"
           )}
         >
@@ -89,7 +89,7 @@ export function CalendarDay({
               "whitespace-normal break-words",
               isSelected
                 ? "bg-white/15 text-white/95"
-                : "bg-black/6 text-slate-600 dark:bg-slate-700/90 dark:text-slate-100"
+                : "bg-black/6 text-slate-600 dark:bg-slate-700 dark:text-slate-100"
             )}
           >
             {holidayLabel}
@@ -99,7 +99,7 @@ export function CalendarDay({
           <p
             className={clsx(
               "text-[11px] leading-none",
-              isSelected ? "text-white/80" : "text-muted dark:text-slate-300"
+              isSelected ? "text-white/80" : "text-muted dark:text-slate-500"
             )}
           >
             Today
@@ -109,3 +109,4 @@ export function CalendarDay({
     </motion.button>
   );
 }
+
