@@ -107,11 +107,17 @@ npm start
 
 ## Screenshots
 
-Add real screenshots after running locally:
+In large screens like laptop:
 
 - <img width="724" height="913" alt="image" src="https://github.com/user-attachments/assets/adecfaa5-15c6-4090-8937-bef51c5fed8d" />
 
 - <img width="483" height="650" alt="image" src="https://github.com/user-attachments/assets/e1dab8d9-dc0a-456f-a0b4-e624797bfe62" />
+In phones:
+
+- <img width="720" height="1392" alt="image" src="https://github.com/user-attachments/assets/26b6c263-39ae-4955-8bad-ecbcccab1f2e" />
+-<img width="720" height="1308" alt="image" src="https://github.com/user-attachments/assets/7b3ecd88-1d1c-487a-8f2d-8855d245f478" />
+-<img width="720" height="1395" alt="image" src="https://github.com/user-attachments/assets/9a31f6b0-3a25-4586-86ab-7dfcba9c01fa" />
+-<img width="720" height="1392" alt="image" src="https://github.com/user-attachments/assets/2f77be56-53b9-448c-972e-a3469f18c212" />
 
 
 ## Notes
