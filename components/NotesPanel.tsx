@@ -149,7 +149,7 @@ export function NotesPanel({
             type="button"
             onClick={handleSave}
             disabled={isDisabled || !draft.trim()}
-            className="rounded-full bg-[rgba(var(--accent),0.95)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[rgba(var(--accent),0.22)] disabled:cursor-not-allowed disabled:opacity-50"
+            className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-[rgb(var(--paper))] shadow-sm transition hover:-translate-y-0.5 hover:opacity-90 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50"
           >
             Save note
           </button>
@@ -227,4 +227,5 @@ export function NotesPanel({
     </div>
   );
 }
+
 
