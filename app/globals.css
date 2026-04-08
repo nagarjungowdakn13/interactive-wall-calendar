@@ -1,0 +1,83 @@
+@import "../styles/texture.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --paper: 255 252 247;
+  --ink: 29 25 20;
+  --muted: 115 106 98;
+  --accent: 37 99 235;
+  --ring: 191 219 254;
+}
+
+.dark {
+  color-scheme: dark;
+  --paper: 29 25 23;
+  --ink: 243 238 232;
+  --muted: 181 170 158;
+  --ring: 96 165 250;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans), sans-serif;
+}
+
+button:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgba(var(--ring), 0.9);
+  outline-offset: 2px;
+}
+
+.paper-surface {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 244, 0.96)),
+    linear-gradient(135deg, rgba(var(--accent), 0.05), transparent 42%);
+}
+
+.dark .paper-surface {
+  background:
+    linear-gradient(180deg, rgba(45, 39, 37, 0.98), rgba(25, 22, 21, 0.98)),
+    linear-gradient(135deg, rgba(var(--accent), 0.16), transparent 42%);
+}
+
+.calendar-holes::before,
+.calendar-holes::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: rgba(120, 113, 108, 0.18);
+  box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.65);
+}
+
+.calendar-holes::before {
+  left: 26%;
+}
+
+.calendar-holes::after {
+  right: 26%;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent), 0.2);
+  border-radius: 9999px;
+}
